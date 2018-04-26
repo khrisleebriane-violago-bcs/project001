@@ -9,6 +9,7 @@ Given(/^I go to google search page$/, async () => {
 
 When(/^I search for (.*)$/, (searchString) => {
   searchPage.waitForElementVisible('@searchTextBox', 1000);    
+  searchPage.waitForElementPresent('@searchButton', 1000);
   return searchPage.setValue('@searchTextBox', [searchString, client.keys.ENTER]);
 });
 
