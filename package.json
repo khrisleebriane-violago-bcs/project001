@@ -1,0 +1,25 @@
+{
+  "name": "project001",
+  "version": "1.0.0",
+  "description": "For testing purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khrisleebriane-violago-bcs/project001.git"
+  },
+  "author": "Khris Lee Briane Violago",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khrisleebriane-violago-bcs/project001/issues"
+  },
+  "homepage": "https://github.com/khrisleebriane-violago-bcs/project001#readme",
+  "dependencies": {
+    "cucumber": "^4.0.0",
+    "cucumber-pretty": "^1.4.1",
+    "nightwatch": "^0.9.20",
+    "nightwatch-cucumber": "^9.1.2"
+  }
+}
