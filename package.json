@@ -4,7 +4,7 @@
   "description": "For testing purposes",
   "main": "index.js",
   "scripts": {
-    "test": "nightwatch"
+    "test": "./node_modules/.bin/nightwatch"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,12 @@
   },
   "homepage": "https://github.com/khrisleebriane-violago-bcs/project001#readme",
   "dependencies": {
-    "cucumber": "^4.0.0",
     "cucumber-pretty": "^1.4.1",
-    "nightwatch": "^0.9.20",
+    "phantomjs-prebuilt": "^2.1.16"
+  },
+  "devDependencies": {
+    "cucumber": "^4.2.1",
+    "nightwatch": "^0.9.21",
     "nightwatch-cucumber": "^9.1.2"
   }
 }
