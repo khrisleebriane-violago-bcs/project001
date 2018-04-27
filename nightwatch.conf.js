@@ -32,6 +32,7 @@ module.exports = {
       screenshots: {
         enabled: true,
         onfailure: true,
+        on_error : true,
         path: './screenshots'
       },
       selenium_port: 4444,
