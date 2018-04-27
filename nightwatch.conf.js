@@ -1,6 +1,7 @@
 require('nightwatch-cucumber')({
   cucumberArgs: [
     '--format', 'node_modules/cucumber-pretty',
+    '--format', 'json:reports/cucumber.json',
     'features'
   ]
 });
@@ -13,7 +14,9 @@ module.exports = {
   globals_path: "",
   live_output: false,
   disable_colors: false,
-  test_workers: false,
+  test_workers: {
+    enabled: true
+  },
   selenium: {
     start_process: true,
     server_path: './bin/selenium-server-standalone-3.9.1.jar',
@@ -42,11 +45,14 @@ module.exports = {
         }
       }
     },
-    chrome: {
+    headless: {
       desiredCapabilities: {
         browserName: 'chrome',
         javascriptEnabled: true,
-        acceptSslCerts: true
+        acceptSslCerts: true,
+        chromeOptions: {
+          args: ["disable-web-security", "ignore-certificate-errors", "headless"]
+        }
       }
     }
   }

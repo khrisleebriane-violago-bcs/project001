@@ -1,2 +1,2 @@
 # project001
-For testing purposes
+A random project
