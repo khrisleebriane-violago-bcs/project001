@@ -7,13 +7,17 @@ require('nightwatch-cucumber')({
 });
 
 module.exports = {
-  output_folder: './reports',
-  page_objects_path : "./page_objects",
+  /* File paths */
   custom_assertions_path: '',
   custom_commands_path : "./custom_commands",
-  globals_path: "",
-  live_output: false,
+  globals_path: "./globals.js",
+  output_folder: './reports',
+  page_objects_path : "./page_objects",
+
+  /* Others */
+  detailed_output: false,
   disable_colors: false,
+  live_output: true,
   test_workers: {
     enabled: true
   },
@@ -28,23 +32,25 @@ module.exports = {
   },
   test_settings: {
     default: {
-      launch_url: 'https://devci.webjet.com.au/FlightSearch/',
+      default_path_prefix: '',
+      desiredCapabilities: {
+        browserName: 'chrome',
+        javascriptEnabled: true,
+        acceptSslCerts: true,
+        chromeOptions: {
+          args: ['incognito', 'start-maximized', 'disable-gpu', '--no-sandbox']
+        }
+      },
+      launch_url: '',
       screenshots: {
         enabled: true,
         onfailure: true,
         on_error : true,
         path: './screenshots'
       },
-      selenium_port: 4444,
+      //selenium_port: 4444,
+      selenium_port: 9515,
       selenium_host: 'localhost',
-      desiredCapabilities: {
-        browserName: 'chrome',
-        javascriptEnabled: true,
-        acceptSslCerts: true,
-        chromeOptions: {
-          args: ['incognito', 'start-maximized', 'disbale-gpu']
-        }
-      }
     },
     headless: {
       desiredCapabilities: {

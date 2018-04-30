@@ -17,21 +17,20 @@ When(/^I search for (.*)$/, function(searchString) {
 
 Then(/^links from search results will be written in a text file$/, function() {
   var resultsPage = client.page.SearchResults();
-  resultsPage.waitForElementVisible('@aboutGoogle', 6000);
+  resultsPage.waitForElementVisible('@resultStats', 10000);
   var currentDate = new Date();
   var filename = 'SearchResults_' + searchQuery + '_' + currentDate.getMonth().toString() + '-' + currentDate.getDay().toString() + '-' + currentDate.getFullYear().toString();
-  client.saveScreenshot('./screenshots/' + filename + '.png');
   return client.elements('css selector', 'div[class=g] h3 a',function (result) {
     var data = '';
     for (var i = 0; i < result.value.length; i++) {
       client.elementIdAttribute(result.value[i].ELEMENT, 'href', function(attribute) {
         data += attribute.value;
         data += '\n';
+        fs.appendFile('./logs/' + filename + '.txt', data, function (exception) {
+          if (exception) 
+            throw exception;
+        });
       });
     }
-    fs.appendFile('./logs/' + filename + '.txt', data, function (exception) {
-      if (exception) 
-        throw exception;
-    });
   });
 });
