@@ -1,14 +1,16 @@
+@google
 Feature: GoogleSearch
 
 Background: 
     Given I go to google search page
 
+@search
 Scenario Outline: 
     When I search for <search>
-    Then links from search results will be written in a text file
+    Then the search information will be written in a text file
 
     Examples:
-    | search              |
-    | nightwatch          |
-    | cucumber.io         |
-    | nightwatch-cucumber |
+    | search                             |
+    | cake +chocolate +lemon -strawberry |
+    | chicken +spicy +gravy -potato      |
+    | boring                             |

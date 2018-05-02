@@ -4,8 +4,7 @@
   "description": "For testing purposes",
   "main": "index.js",
   "scripts": {
-    "test": "nightwatch",
-    "rapid-test": "nightwatch -e default,headless"
+    "test": "nightwatch -e default"
   },
   "repository": {
     "type": "git",
@@ -19,7 +18,8 @@
   "homepage": "https://github.com/khrisleebriane-violago-bcs/project001#readme",
   "dependencies": {
     "chromedriver": "^2.38.2",
-    "cucumber-pretty": "^1.4.1"
+    "cucumber-pretty": "^1.4.1",
+    "nightwatch-html-reporter": "^2.0.5"
   },
   "devDependencies": {
     "cucumber": "^4.2.1",

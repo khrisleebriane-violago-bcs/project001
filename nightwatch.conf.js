@@ -32,7 +32,6 @@ module.exports = {
   },
   test_settings: {
     default: {
-      default_path_prefix: '',
       desiredCapabilities: {
         browserName: 'chrome',
         javascriptEnabled: true,
@@ -48,8 +47,7 @@ module.exports = {
         on_error : true,
         path: './screenshots'
       },
-      //selenium_port: 4444,
-      selenium_port: 9515,
+      selenium_port: 4444,
       selenium_host: 'localhost',
     },
     headless: {
